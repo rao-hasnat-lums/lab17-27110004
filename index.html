@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFF8EE">
+  <meta name="description" content="Homemade cakes, cookies and bread, baked with love in Gulberg, Lahore. Call Sweet Crumb to order.">
+  <title>Sweet Crumb | Baked with love in Lahore.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #FFF8EE;
+      --chocolate: #6B4226;
+      --rose: #E8A0A0;
+      --honey: #D9A441;
+      --cocoa: #3B2A20;
+      --heading: "Fraunces", Georgia, serif;
+      --body: "Nunito", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--cocoa);
+      font-family: var(--body);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid rgb(107 66 38 / 14%);
+      background: var(--cream);
+    }
+
+    .header-inner {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-block: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      color: var(--chocolate);
+      font: 700 1.65rem/1.05 var(--heading);
+      letter-spacing: -0.035em;
+    }
+
+    .brand-tagline {
+      margin-top: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.015em;
+    }
+
+    .nav-order,
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-order { gap: 1.5rem; }
+    .nav-links { gap: clamp(0.8rem, 2vw, 1.6rem); }
+
+    .nav-links a {
+      color: var(--chocolate);
+      font-size: 0.94rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { text-decoration: underline; text-underline-offset: 0.25em; }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border: 2px solid var(--chocolate);
+      border-radius: 999px;
+      padding: 0.65rem 1.15rem;
+      background: var(--chocolate);
+      color: var(--cream);
+      font: 800 0.92rem/1.2 var(--body);
+      text-align: center;
+      text-decoration: none;
+      transition: transform 160ms ease, background-color 160ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--honey);
+      outline-offset: 3px;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--chocolate);
+    }
+
+    .hero {
+      overflow: hidden;
+      padding-block: clamp(3rem, 7vw, 6.5rem);
+      background:
+        radial-gradient(ellipse at 82% 45%, rgb(217 164 65 / 13%), transparent 31%),
+        var(--cream);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.85rem;
+      color: var(--chocolate);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { color: var(--chocolate); font-family: var(--heading); }
+
+    h1 {
+      max-width: 620px;
+      margin: 0;
+      font-size: clamp(3.2rem, 7vw, 5.7rem);
+      font-weight: 600;
+      letter-spacing: -0.055em;
+      line-height: 0.99;
+    }
+
+    .hero-tagline {
+      margin: 1rem 0 0;
+      color: var(--chocolate);
+      font: 600 clamp(1.35rem, 2.4vw, 1.8rem)/1.3 var(--heading);
+    }
+
+    .hero-copy {
+      max-width: 470px;
+      margin: 1.1rem 0 1.7rem;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .kitchen-art {
+      width: 100%;
+      max-width: 510px;
+      justify-self: end;
+      border-radius: 48% 48% 1.5rem 1.5rem;
+      background: #E8A0A0;
+      box-shadow: 16px 16px 0 rgb(217 164 65 / 32%);
+    }
+
+    section { scroll-margin-top: 1.5rem; }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 2.4rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.65rem;
+      font-size: clamp(2.35rem, 4vw, 3.5rem);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .section-heading p { margin: 0; }
+
+    .menu-section { padding-block: clamp(4rem, 8vw, 6.5rem); }
+
+    .menu-category + .menu-category { margin-top: 2.6rem; }
+
+    .menu-category h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0 0 1rem;
+      font-size: 1.65rem;
+    }
+
+    .menu-category h3::after {
+      height: 1px;
+      flex: 1;
+      background: rgb(107 66 38 / 25%);
+      content: "";
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .menu-card {
+      display: flex;
+      min-height: 150px;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgb(107 66 38 / 18%);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      background: rgb(255 255 255 / 45%);
+    }
+
+    .menu-card-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .menu-emoji {
+      display: grid;
+      width: 2.75rem;
+      height: 2.75rem;
+      flex: 0 0 2.75rem;
+      place-items: center;
+      border-radius: 50%;
+      background: rgb(232 160 160 / 24%);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .menu-card h4 {
+      margin: 0 0 0.3rem;
+      color: var(--chocolate);
+      font: 700 1.2rem/1.3 var(--heading);
+    }
+
+    .menu-card p { margin: 0; font-size: 0.94rem; }
+
+    .price {
+      margin-top: 1rem;
+      color: var(--chocolate);
+      font-weight: 800;
+    }
+
+    .about-section {
+      padding-block: clamp(4rem, 7vw, 6rem);
+      background: rgb(232 160 160 / 18%);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      align-items: center;
+      gap: clamp(2rem, 7vw, 6rem);
+    }
+
+    .about-stamp {
+      display: grid;
+      width: min(250px, 100%);
+      aspect-ratio: 1;
+      place-content: center;
+      justify-self: center;
+      border: 2px dashed var(--chocolate);
+      border-radius: 50%;
+      color: var(--chocolate);
+      text-align: center;
+      transform: rotate(-7deg);
+    }
+
+    .about-stamp span { display: block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; }
+    .about-stamp strong { display: block; font: 600 2.2rem/1.1 var(--heading); }
+
+    .about-copy h2 {
+      margin: 0 0 0.9rem;
+      font-size: clamp(2.3rem, 4vw, 3.3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .about-copy p { max-width: 630px; margin: 0 0 0.9rem; }
+
+    .contact-section { padding-block: clamp(4rem, 8vw, 6.5rem); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+
+    .contact-copy h2 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(2.3rem, 4vw, 3.25rem);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .contact-copy p { margin: 0 0 1.2rem; }
+    .contact-details { display: grid; gap: 0.45rem; }
+    .contact-details a { color: var(--chocolate); font-weight: 800; }
+
+    .enquiry-form {
+      border: 1px solid rgb(107 66 38 / 18%);
+      border-radius: 1rem;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      background: rgb(255 255 255 / 45%);
+    }
+
+    .enquiry-form h3 { margin: 0 0 0.35rem; font-size: 1.55rem; }
+    .form-note { margin: 0 0 1.15rem; font-size: 0.9rem; }
+    .field { margin-top: 1rem; }
+    .field label { display: block; margin-bottom: 0.35rem; font-weight: 800; }
+    .field input, .field textarea {
+      width: 100%;
+      border: 1px solid rgb(59 42 32 / 45%);
+      border-radius: 0.65rem;
+      padding: 0.75rem 0.85rem;
+      background: var(--cream);
+      color: var(--cocoa);
+      font: 500 1rem var(--body);
+    }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .field-hint { display: block; margin-top: 0.25rem; font-size: 0.82rem; }
+    .form-message { min-height: 1.5em; margin: 0.75rem 0 0; font-weight: 800; }
+    .enquiry-form .button { margin-top: 1rem; cursor: pointer; }
+
+    .site-footer {
+      padding-block: 2rem;
+      background: var(--chocolate);
+      color: var(--cream);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem 2rem;
+    }
+
+    .footer-brand { font: 600 1.45rem/1.2 var(--heading); }
+    .footer-tagline { margin: 0.2rem 0 0; font-size: 0.88rem; }
+    .footer-details { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin: 0; padding: 0; list-style: none; }
+    .site-footer a { font-weight: 800; }
+
+    @media (max-width: 800px) {
+      .header-inner { flex-wrap: wrap; }
+      .nav-order { gap: 1rem; }
+      .hero-inner { grid-template-columns: 1fr 0.8fr; gap: 1.5rem; }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 2rem, 480px); }
+      .header-inner { justify-content: center; gap: 0.9rem; }
+      .brand { align-items: center; }
+      .nav-order { width: 100%; flex-direction: column; gap: 0.75rem; }
+      .nav-links { justify-content: center; flex-wrap: wrap; gap: 0.4rem 1.15rem; }
+      .hero { padding-top: 3rem; }
+      .hero-inner, .about-inner, .contact-grid { grid-template-columns: 1fr; }
+      .hero-copy { max-width: 540px; }
+      .kitchen-art { width: min(390px, 90%); justify-self: center; margin-top: 1rem; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card { min-height: 135px; }
+      .about-stamp { width: 190px; }
+      .footer-inner { justify-content: center; text-align: center; }
+      .footer-details { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="Sweet Crumb home">
+        <span class="brand-name">Sweet Crumb</span>
+        <span class="brand-tagline">Baked with love in Lahore.</span>
+      </a>
+      <div class="nav-order">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="about.html">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="button" href="tel:+923001234567">Call to Order · +92 300 1234567</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="eyebrow">A little sweetness from our kitchen</p>
+          <h1>Sweet Crumb</h1>
+          <p class="hero-tagline">Baked with love in Lahore.</p>
+          <p class="hero-copy">The smell of something lovely is in the oven. Find a favourite cake, a cookie for your tea, or a fresh loaf to share.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+923001234567">Call to Order · +92 300 1234567</a>
+            <a class="button button-outline" href="#menu">See the Menu</a>
+          </div>
+        </div>
+        <svg class="kitchen-art" viewBox="0 0 520 520" role="img" aria-labelledby="kitchen-title kitchen-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="kitchen-title">A sunny home-baking kitchen</title>
+          <desc id="kitchen-desc">A hand-drawn cake cooling on a kitchen table beside a sunlit window, with a mixing bowl and a small vase of flowers.</desc>
+          <rect x="36" y="36" width="448" height="448" rx="190" fill="#FFF8EE"/>
+          <rect x="84" y="86" width="168" height="196" rx="9" fill="#D9A441"/>
+          <rect x="98" y="100" width="140" height="168" rx="4" fill="#FFF8EE"/>
+          <path d="M168 100v168M98 184h140" stroke="#6B4226" stroke-width="8"/>
+          <path d="M110 114h43v55h-43zM183 114h43v55h-43zM110 199h43v55h-43zM183 199h43v55h-43z" fill="#E8A0A0" opacity=".6"/>
+          <path d="M105 283c28-22 52-24 74-8 22-18 46-17 72 8" fill="none" stroke="#D9A441" stroke-linecap="round" stroke-width="9"/>
+          <path d="M42 362h436v54H42z" fill="#6B4226"/>
+          <path d="M73 416h373l-21 45H94z" fill="#D9A441"/>
+          <ellipse cx="296" cy="370" rx="132" ry="19" fill="#3B2A20" opacity=".14"/>
+          <path d="M205 331c0-16 13-29 29-29h118c16 0 29 13 29 29v34H205z" fill="#E8A0A0"/>
+          <path d="M194 361h198c0 23-19 42-42 42h-114c-23 0-42-19-42-42z" fill="#FFF8EE" stroke="#6B4226" stroke-width="5"/>
+          <path d="M196 361c14 0 14 12 28 12s14-12 28-12 14 12 28 12 14-12 28-12 14 12 28 12 14-12 28-12 14 12 28 12" fill="none" stroke="#E8A0A0" stroke-linecap="round" stroke-width="8"/>
+          <path d="M263 300c4-17 12-24 25-24s21 7 25 24" fill="#D9A441" stroke="#6B4226" stroke-width="4"/>
+          <path d="M288 276c-18-15-8-28 1-27 4 0 8 4 9 10 5-15 20-10 18 0-2 8-11 13-28 17z" fill="#E8A0A0"/>
+          <path d="M132 332c4-21 5-35 3-48M143 332c14-19 21-33 24-47M121 332c-13-17-19-30-20-43" fill="none" stroke="#6B4226" stroke-linecap="round" stroke-width="5"/>
+          <path d="M130 326c-28-12-29-30-16-30 9 0 16 11 16 30zM145 315c2-29 19-36 22-23 2 9-7 18-22 23zM122 314c-25-16-23-33-10-29 9 3 13 14 10 29z" fill="#D9A441"/>
+          <path d="M111 330h44l-5 35h-34z" fill="#E8A0A0" stroke="#6B4226" stroke-width="4"/>
+          <path d="M411 335c0-18 14-32 32-32s32 14 32 32v27h-64z" fill="#FFF8EE" stroke="#6B4226" stroke-width="4"/>
+          <path d="M475 341h10c13 0 13 20 0 20h-10" fill="none" stroke="#6B4226" stroke-width="5"/>
+          <path d="M422 329h42M422 340h42" stroke="#E8A0A0" stroke-width="5"/>
+          <path d="M400 371h68" stroke="#D9A441" stroke-linecap="round" stroke-width="7"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Made fresh, made with care</p>
+          <h2>Something for your table</h2>
+          <p>Every bake is made in our Gulberg kitchen. Call us to ask about flavours and place your order.</p>
+        </div>
+
+        <div class="menu-category">
+          <h3>Cakes</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🎂</span><div><h4>Chocolate Fudge Cake</h4><p>Soft cocoa sponge with a rich, silky fudge frosting.</p></div></div>
+              <p class="price">Rs 2,500 per kg</p>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🍓</span><div><h4>Vanilla Berry Cake</h4><p>Vanilla layers with a bright, homemade berry filling.</p></div></div>
+              <p class="price">Rs 2,800 per kg</p>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🥕</span><div><h4>Carrot Walnut Cake</h4><p>Warm spices, fresh carrot and a little walnut crunch.</p></div></div>
+              <p class="price">Rs 2,400 per kg</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Cookies</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🍪</span><div><h4>Chocolate Chip Cookies</h4><p>Golden edges, soft centres and plenty of chocolate.</p></div></div>
+              <p class="price">Rs 900 per dozen</p>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🌾</span><div><h4>Oat &amp; Raisin Cookies</h4><p>Chewy oats and sweet raisins for your tea break.</p></div></div>
+              <p class="price">Rs 850 per dozen</p>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🌰</span><div><h4>Almond Shortbread</h4><p>Buttery little bites with a gentle almond crunch.</p></div></div>
+              <p class="price">Rs 1,000 per dozen</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Bread</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🍞</span><div><h4>Everyday Sourdough</h4><p>A crusty, slow-fermented loaf with a tender middle.</p></div></div>
+              <p class="price">Rs 700 per loaf</p>
+            </article>
+            <article class="menu-card">
+              <div class="menu-card-main"><span class="menu-emoji" aria-hidden="true">🍯</span><div><h4>Honey Oat Bread</h4><p>A soft, lightly sweet loaf topped with rolled oats.</p></div></div>
+              <p class="price">Rs 600 per loaf</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="wrap about-inner">
+        <div class="about-stamp" aria-label="Small batches, made with love">
+          <span>SMALL BATCHES</span>
+          <strong>Made<br>with love</strong>
+          <span>IN LAHORE</span>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">A note from our kitchen</p>
+          <h2>Home baking, from our family to yours</h2>
+          <p>Sweet Crumb is a small home bakery in Gulberg. We bake the way we like to share food: with good ingredients, a little patience and lots of care.</p>
+          <p>Our menu is made fresh in small batches. Give us a call and we’ll help you find just the right treat for your table.</p>
+          <a class="button button-outline" href="about.html">Read our story</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">We’d love to hear from you</p>
+          <h2>Let’s make something lovely</h2>
+          <p>Orders are taken by phone. Call us to chat about your bake, or leave your number in the enquiry form and we’ll show you how to get in touch.</p>
+          <div class="contact-details">
+            <a href="tel:+923001234567">Call +92 300 1234567</a>
+            <span>Gulberg, Lahore</span>
+            <span>Monday to Saturday, 10:00 am to 8:00 pm</span>
+          </div>
+        </div>
+
+        <form class="enquiry-form" id="enquiry-form">
+          <h3>Order enquiry</h3>
+          <p class="form-note">Share your number and what you have in mind. We’ll help you by phone. To place an order, please call us.</p>
+          <div class="field">
+            <label for="customer-name">Your name</label>
+            <input id="customer-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="customer-phone">Your phone number</label>
+            <input id="customer-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0300 1234567" aria-describedby="phone-hint phone-error" required>
+            <span class="field-hint" id="phone-hint">Enter your 11-digit local number.</span>
+            <span class="field-hint" id="phone-error"></span>
+          </div>
+          <div class="field">
+            <label for="enquiry-message">What would you like to ask about?</label>
+            <textarea id="enquiry-message" name="message" placeholder="A cake for a family get-together, please…"></textarea>
+          </div>
+          <button class="button" type="submit">Check my number</button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <div class="footer-brand">Sweet Crumb</div>
+        <p class="footer-tagline">Baked with love in Lahore.</p>
+      </div>
+      <ul class="footer-details">
+        <li>Gulberg, Lahore</li>
+        <li>Monday to Saturday, 10:00 am to 8:00 pm</li>
+        <li><a href="tel:+923001234567">+92 300 1234567</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.querySelector("#enquiry-form");
+    const phoneInput = document.querySelector("#customer-phone");
+    const phoneError = document.querySelector("#phone-error");
+    const formMessage = document.querySelector("#form-message");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const digits = phoneInput.value.replace(/\D/g, "");
+      phoneError.textContent = "";
+      formMessage.textContent = "";
+      phoneInput.removeAttribute("aria-invalid");
+
+      if (digits.length !== 11) {
+        phoneError.textContent = "Please enter a phone number with exactly 11 digits.";
+        phoneInput.setAttribute("aria-invalid", "true");
+        phoneInput.focus();
+        return;
+      }
+
+      formMessage.textContent = "That number has 11 digits. Please call +92 300 1234567 to place your order.";
+    });
+  </script>
+</body>
+</html>
