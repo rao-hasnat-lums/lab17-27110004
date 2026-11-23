@@ -233,6 +233,12 @@
       border-radius: 1rem;
       padding: 1.25rem;
       background: rgb(255 255 255 / 45%);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgb(59 42 32 / 12%);
     }
 
     .menu-card-main {
@@ -350,6 +356,7 @@
     .enquiry-form .button { margin-top: 1rem; cursor: pointer; }
 
     .site-footer {
+      border-top: 3px solid var(--rose);
       padding-block: 2rem;
       background: var(--chocolate);
       color: var(--cream);
@@ -395,6 +402,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: 0.01ms !important; }
+      .menu-card:hover { transform: none; }
     }
   </style>
 </head>
