@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFF8EE">
+  <meta name="description" content="Call or send an enquiry to Sweet Crumb, a small home bakery in Gulberg, Lahore.">
+  <title>Contact Sweet Crumb | Baked with love in Lahore.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #FFF8EE;
+      --chocolate: #6B4226;
+      --rose: #E8A0A0;
+      --honey: #D9A441;
+      --cocoa: #3B2A20;
+      --heading: "Fraunces", Georgia, serif;
+      --body: "Nunito", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--cocoa);
+      font: 1rem/1.65 var(--body);
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid rgb(107 66 38 / 14%);
+      background: var(--cream);
+    }
+
+    .header-inner {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-block: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      color: var(--chocolate);
+      font: 700 1.65rem/1.05 var(--heading);
+      letter-spacing: -0.035em;
+    }
+
+    .brand-tagline { margin-top: 0.35rem; font-size: 0.78rem; font-weight: 700; }
+    .nav-order, .nav-links { display: flex; align-items: center; }
+    .nav-order { gap: 1.5rem; }
+    .nav-links { gap: clamp(0.8rem, 2vw, 1.6rem); }
+
+    .nav-links a {
+      color: var(--chocolate);
+      font-size: 0.94rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { text-decoration: underline; text-underline-offset: 0.25em; }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--chocolate);
+      border-radius: 999px;
+      padding: 0.65rem 1.15rem;
+      background: var(--chocolate);
+      color: var(--cream);
+      font: 800 0.92rem/1.2 var(--body);
+      text-align: center;
+      text-decoration: none;
+      transition: transform 160ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; }
+    h1, h2, h3 { color: var(--chocolate); font-family: var(--heading); }
+
+    .contact-section {
+      padding-block: clamp(3.5rem, 8vw, 6rem);
+      background: radial-gradient(ellipse at 82% 15%, rgb(217 164 65 / 13%), transparent 30%), var(--cream);
+    }
+
+    .section-heading { max-width: 720px; margin: 0 auto 2.5rem; text-align: center; }
+    .eyebrow { margin: 0 0 0.85rem; color: var(--chocolate); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+    .section-heading h1 { margin: 0; font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 600; letter-spacing: -0.055em; line-height: 1; }
+    .section-heading > p:last-child { margin: 1rem 0 0; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: start;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+
+    .contact-details h2 { margin: 0 0 0.8rem; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; }
+    .contact-details > p { margin: 0 0 1.2rem; }
+    .contact-list { display: grid; gap: 1rem; margin: 0; }
+    .contact-list dt { color: var(--chocolate); font-weight: 800; }
+    .contact-list dd { margin: 0.15rem 0 0; }
+    .contact-list a { color: var(--chocolate); font-weight: 800; }
+
+    .enquiry-form {
+      border: 1px solid rgb(107 66 38 / 18%);
+      border-radius: 1rem;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      background: var(--cream);
+    }
+
+    .enquiry-form h2 { margin: 0 0 0.35rem; font-size: 1.65rem; }
+    .form-note { margin: 0 0 1.15rem; }
+    .field { margin-top: 1rem; }
+    .field label { display: block; margin-bottom: 0.35rem; font-weight: 800; }
+
+    .field input, .field textarea {
+      width: 100%;
+      border: 1px solid var(--chocolate);
+      border-radius: 0.65rem;
+      padding: 0.75rem 0.85rem;
+      background: var(--cream);
+      color: var(--cocoa);
+      font: 500 1rem var(--body);
+    }
+
+    .field textarea { min-height: 120px; resize: vertical; }
+    .field-hint { display: block; margin-top: 0.25rem; font-size: 0.86rem; }
+    .field-error { color: var(--chocolate); font-weight: 800; }
+    .form-message { min-height: 1.5em; margin: 0.75rem 0 0; font-weight: 800; }
+    .enquiry-form .button { margin-top: 1rem; cursor: pointer; }
+
+    .site-footer {
+      border-top: 3px solid var(--rose);
+      padding-block: 2rem;
+      background: var(--chocolate);
+      color: var(--cream);
+    }
+
+    .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+    .footer-brand { font: 600 1.45rem/1.2 var(--heading); }
+    .footer-tagline { margin: 0.2rem 0 0; font-size: 0.88rem; }
+    .footer-details { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin: 0; padding: 0; list-style: none; }
+    .site-footer a { font-weight: 800; }
+
+    @media (max-width: 800px) {
+      .header-inner { flex-wrap: wrap; }
+      .nav-order { gap: 1rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 2rem, 480px); }
+      .header-inner { justify-content: center; gap: 0.9rem; }
+      .brand { align-items: center; }
+      .nav-order { width: 100%; flex-direction: column; gap: 0.75rem; }
+      .nav-links { justify-content: center; flex-wrap: wrap; gap: 0.4rem 1.15rem; }
+      .footer-inner { justify-content: center; text-align: center; }
+      .footer-details { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html#home" aria-label="Sweet Crumb home">
+        <span class="brand-name">Sweet Crumb</span>
+        <span class="brand-tagline">Baked with love in Lahore.</span>
+      </a>
+      <div class="nav-order">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#menu">Menu</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+        <a class="button" href="tel:+923001234567">Call to Order · +92 300 1234567</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">We’d love to hear from you</p>
+          <h1>Come say hello</h1>
+          <p>Have a question about a cake, a batch of cookies or a fresh loaf? Give us a call or leave a note.</p>
+        </div>
+
+        <div class="contact-grid">
+          <section class="contact-details" aria-labelledby="visit-heading">
+            <h2 id="visit-heading">Find us in Lahore</h2>
+            <p>Our home bakery is in Gulberg. Orders are taken by phone, and we’re always happy to help you choose something lovely.</p>
+            <dl class="contact-list">
+              <div>
+                <dt>Area</dt>
+                <dd>Gulberg, Lahore</dd>
+              </div>
+              <div>
+                <dt>Opening hours</dt>
+                <dd>Monday to Saturday, 10:00 am to 8:00 pm</dd>
+              </div>
+              <div>
+                <dt>Call us</dt>
+                <dd><a href="tel:+923001234567">+92 300 1234567</a></dd>
+              </div>
+            </dl>
+          </section>
+
+          <form class="enquiry-form" id="enquiry-form" novalidate>
+            <h2>Send us a note</h2>
+            <p class="form-note">Share your name and number, and tell us what you have in mind. Orders are placed by phone.</p>
+            <div class="field">
+              <label for="customer-name">Your name</label>
+              <input id="customer-name" name="name" autocomplete="name" aria-describedby="name-error" required>
+              <span class="field-hint field-error" id="name-error"></span>
+            </div>
+            <div class="field">
+              <label for="customer-phone">Your phone number</label>
+              <input id="customer-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0300 1234567" aria-describedby="phone-hint phone-error" required>
+              <span class="field-hint" id="phone-hint">Please enter 11 digits. Spaces are fine.</span>
+              <span class="field-hint field-error" id="phone-error"></span>
+            </div>
+            <div class="field">
+              <label for="enquiry-message">Your message</label>
+              <textarea id="enquiry-message" name="message" placeholder="Tell us what you’re planning…"></textarea>
+            </div>
+            <button class="button" type="submit">Send enquiry</button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <div class="footer-brand">Sweet Crumb</div>
+        <p class="footer-tagline">Baked with love in Lahore.</p>
+      </div>
+      <ul class="footer-details">
+        <li>Gulberg, Lahore</li>
+        <li>Monday to Saturday, 10:00 am to 8:00 pm</li>
+        <li><a href="tel:+923001234567">+92 300 1234567</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.querySelector("#enquiry-form");
+    const nameInput = document.querySelector("#customer-name");
+    const nameError = document.querySelector("#name-error");
+    const phoneInput = document.querySelector("#customer-phone");
+    const phoneError = document.querySelector("#phone-error");
+    const formMessage = document.querySelector("#form-message");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      nameError.textContent = "";
+      phoneError.textContent = "";
+      formMessage.textContent = "";
+      nameInput.removeAttribute("aria-invalid");
+      phoneInput.removeAttribute("aria-invalid");
+
+      if (!nameInput.value.trim()) {
+        nameError.textContent = "Please add your name so we know who we're chatting with.";
+        nameInput.setAttribute("aria-invalid", "true");
+        nameInput.focus();
+        return;
+      }
+
+      const digits = phoneInput.value.replace(/\D/g, "");
+      if (digits.length !== 11) {
+        phoneError.textContent = "Please enter a phone number with exactly 11 digits.";
+        phoneInput.setAttribute("aria-invalid", "true");
+        phoneInput.focus();
+        return;
+      }
+
+      formMessage.textContent = `Thank you, ${nameInput.value.trim()}! Your number looks good. Please call us to place an order.`;
+    });
+  </script>
+</body>
+</html>
